@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+    color: #ffffff;
+    background-image: url(Dark\ Exercising\ with\ Dumbels\ Workout\ Zoom\ Background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.5);
+}
+
+header {
+    
+    
+    text-align: left;
+    padding: 50px 0;
+}
+
+nav ul {
+    position:absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3em;
+    opacity: 1;
+}
+
+.dynamic-text {
+    font-size: 1.5em;
+    position: relative;
+    height: 50px; /* Fixed height for animation */
+    overflow: hidden;
+}
+
+.text {
+    display: none; /* Hide text initially */
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.feature-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
