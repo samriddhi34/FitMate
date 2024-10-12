@@ -38,4 +38,21 @@ def login_view(request):
             messages.error(request , 'Invalid Password or Email id')
     else:
         return render(request,'fit/login.html')
+
+def password_reset_view(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        try:
+            user = User.objects.get(email=email)
+            subject = "Password Reset Request"
+            token = default_token_generator.make_token(user)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            reset_link = f"{get_current_site(request).domain}/reset/{uid}/{token}/"
+            html_message = render_to_string('fit/password_reset_email.html', {'reset_link': reset_link})
+            send_mail(subject, '', 'from@example.com', [email], html_message=html_message)
+            messages.success(request, 'Password reset email sent.')
+        except User.DoesNotExist:
+            messages.error(request, 'No user found with this email.')
+
+    return render(request, 'fit/password_reset.html')
 # Create your views here.
